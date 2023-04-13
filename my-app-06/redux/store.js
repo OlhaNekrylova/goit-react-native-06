@@ -1,11 +1,19 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-
-import { authSlice } from "./auth/authReducer";
+// import { composeWithDevTools } from "@redux-devtools/extension";
+import authReducer from "./auth/slice";
+import dataReducer from "./data/slice";
+import { prestateReducer } from "./prestate/slice";
 
 const rootReducer = combineReducers({
-    [authSlice.name]: authSlice.reducer,
+  auth: authReducer,
+  data: dataReducer,
+  prestate: prestateReducer,
 });
 
-export const store = configureStore({
-    reducer: rootReducer,
+const store = configureStore({
+  reducer: rootReducer,
+//   devTools: true,
+//   compose: composeWithDevTools(),
 });
+
+export default store;

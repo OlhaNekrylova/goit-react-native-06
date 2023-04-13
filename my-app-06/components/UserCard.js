@@ -1,19 +1,25 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import React from "react";
+import { View, Text, Image } from "react-native";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../redux/auth/selectors";
 
 const UserCard = () => {
+  const { nickName, email, photoURL } = useSelector(selectUser);
   return (
     <View style={styles.user}>
-      <Image
-        style={styles.image}
-        source={require("../assets/images/Rectangle-22.png")}
-      />
+      {photoURL ? (
+        <Image style={styles.image} source={{ uri: photoURL }} />
+      ) : (
+        <View style={styles.image} />
+      )}
       <View style={styles.info}>
-        <Text style={styles.name}>Natali Romanova</Text>
-        <Text style={styles.email}>email@example.com</Text>
+        <Text style={styles.name}>{nickName}</Text>
+        <Text style={styles.email}>{email}</Text>
       </View>
     </View>
   );
 };
+
 
 const styles = StyleSheet.create({
     user: {
@@ -21,12 +27,13 @@ const styles = StyleSheet.create({
       display: "flex",
       flexDirection: "row",
       justifyContent: "flex-start",
-  gap: 8,
+      gap: 8,
     },
     image: {
       width: 60,
       height: 60,
       borderRadius: 16,
+      backgroundColor: "#F6F6F6",
     },
     info: {
       display: "flex",
@@ -37,16 +44,12 @@ const styles = StyleSheet.create({
     },
     name: {
     //   fontFamily: "Roboto-Bold",
-      // lineHeight: 15,
       fontWeight: 700,
       fontSize: 24,
-      // fontSize: 13,
     },
     email: {
     //   fontFamily: "Roboto-Regular",
-      // lineHeight: 13,
       fontSize: 18,
-      // fontSize: 11,
     },
   });
   
