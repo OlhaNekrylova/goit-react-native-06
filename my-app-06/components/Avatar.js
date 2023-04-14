@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Feather } from "@expo/vector-icons";
-import { View, Image, TouchableOpacity } from "react-native";
-import { selectPrestate } from "../../redux/prestate/selectors";
-import { selectImage, updateImage } from "../../services/ImagePicker";
-import { delPhoto } from "../../redux/prestate/operations";
-import { selectUser } from "../../redux/auth/selectors";
+import { View, Image, TouchableOpacity, StyleSheet } from "react-native";
+import { selectPrestate } from "../redux/prestate/selectors";
+import { selectImage, updateImage } from "../services/ImagePicker";
+import { delPhoto } from "../redux/prestate/operations";
+import { selectUser } from "../redux/auth/selectors";
 
 const Avatar = () => {
     const dispatch = useDispatch();

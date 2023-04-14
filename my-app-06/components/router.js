@@ -1,12 +1,12 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import Registr from "../Screens/Registration";
+import Registr from "../Screens/Auth/Registration";
 import { useSelector } from "react-redux";
 import { selectUser } from "../redux/auth/selectors";
-import Comments from "../Screens/Comments/Comments";
-import Login from "../Screens/Login";
+import Comments from "../Screens/NestedScreens/Comments";
+import Login from "../Screens/Auth/Login";
 import React from "react";
-import Map from "../Screens/Map/Map";
-import Home from "../Screens/Home";
+import Map from "../Screens/NestedScreens/Map";
+import Home from "../Screens/Main/Home";
 
 const PrivateStack = createStackNavigator();
 const PublicStack = createStackNavigator();
@@ -44,7 +44,7 @@ const PrivateNavigator = () => {
             backgroundColor: "#FFFFFF",
           },
           headerTitleStyle: {
-            fontFamily: "Roboto-Bold",
+            // fontFamily: "Roboto-Bold",
             fontSize: 17,
             color: "#212121",
           },

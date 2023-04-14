@@ -1,7 +1,7 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, StyleSheet } from "react-native";
 import { useSelector } from "react-redux";
-import { selectUser } from "../../redux/auth/selectors";
+import { selectUser } from "../redux/auth/selectors";
 
 const UserCard = () => {
   const { nickName, email, photoURL } = useSelector(selectUser);
@@ -19,7 +19,6 @@ const UserCard = () => {
     </View>
   );
 };
-
 
 const styles = StyleSheet.create({
     user: {

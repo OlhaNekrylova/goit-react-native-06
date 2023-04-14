@@ -1,7 +1,7 @@
 import { Feather } from "@expo/vector-icons";
 import { useSelector } from "react-redux";
-import { Text, View, Image, TouchableOpacity } from "react-native";
-import { selectPosts, selectComments } from "../../redux/data/selectors";
+import { Text, View, Image, TouchableOpacity, StyleSheet } from "react-native";
+import { selectPosts, selectComments } from "../redux/data/selectors";
 
 const PostsCard = ({
   postId,
